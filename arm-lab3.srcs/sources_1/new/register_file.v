@@ -21,6 +21,7 @@
 
 `define INSTRUCTION_SIZE     32  // 32 bit instructions
 `define NUM_REGISTERS        32  // 32 general purpose registers
+
 module register_file(
     input clk,
     input rst,
@@ -33,7 +34,7 @@ module register_file(
     output[`INSTRUCTION_SIZE-1:0]read_data_2  // second data output
     );
     
-    reg [`INSTRUCTION_SIZE-1:0]registers[NUM_REGISTERS-1:0];
+    reg [`INSTRUCTION_SIZE-1:0]registers[`NUM_REGISTERS-1:0];
     integer i;
     
     // assign outputs to registers, always happens so use assign rather than in always
@@ -44,7 +45,7 @@ module register_file(
     always @(posedge clk) begin
         if (rst) begin
             for(i = 0; i < `NUM_REGISTERS; i = i + 1)
-                registers <= `INSTRUCTION_SIZE-1'b0;
+                registers[i] <= `INSTRUCTION_SIZE-1'b0;
         end
         
         else if (write_back) // write to register file

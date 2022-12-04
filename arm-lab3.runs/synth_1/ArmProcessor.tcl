@@ -89,8 +89,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/InstructionMemory.v
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/Pc.v
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/ArmProcessor.v
-  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/RegisterFile.v
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/IF_stage.v
+  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/register_file.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

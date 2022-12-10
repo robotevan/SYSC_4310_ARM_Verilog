@@ -27,7 +27,7 @@ module register_file(
     input rst,
     input [0:4]read_reg_1, // first read reg
     input [0:4]read_reg_2, // second read reg
-    input write_back, // signal for write
+    input write_sig, // signal for write
     input [0:4]write_reg, // reg to write to from control unit
     input [`INSTRUCTION_SIZE-1:0]write_data, // data to write
     output[`INSTRUCTION_SIZE-1:0]read_data_1, // first data output
@@ -44,11 +44,11 @@ module register_file(
     // logic for rst and write bac
     always @(posedge clk) begin
         if (rst) begin
-            for(i = 0; i < `NUM_REGISTERS; i = i + 1)
-                registers[i] <= `INSTRUCTION_SIZE-1'b0;
+            for(i = 0; i < 32; i = i + 1)
+                registers[i] <= 32'b0;
         end
         
-        else if (write_back) // write to register file
+        else if (write_sig) // write to register file
             registers[write_reg] <= write_data;
     end
 endmodule

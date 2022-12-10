@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1670147239" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ArmProcessor.dcp">
+<GenRun Id="synth_1" LaunchPart="xa7s75fgga676-2I" LaunchTime="1670620787" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ArmProcessor.dcp">
   <File Type="PA-TCL" Name="ArmProcessor.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="ArmProcessor_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ArmProcessor_reports.tcl"/>
   <File Type="RDS-RDS" Name="ArmProcessor.vds"/>
   <File Type="RDS-UTIL" Name="ArmProcessor_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ArmProcessor_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="ArmProcessor.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ArmProcessor_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ArmProcessor_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/InstructionMemory.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/Pc.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -32,14 +22,35 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/IF_stage.v">
+    <File Path="$PSRCDIR/sources_1/new/register_file.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/register_file.v">
+    <File Path="$PSRCDIR/sources_1/new/control_unit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/imm_gen.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/alu.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/data_memory.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -64,6 +75,7 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>

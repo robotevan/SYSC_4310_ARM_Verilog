@@ -71,8 +71,9 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7k70tfbv676-1
+create_project -in_memory -part xa7s75fgga676-2I
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -86,11 +87,13 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/InstructionMemory.v
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/Pc.v
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/ArmProcessor.v
-  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/IF_stage.v
   C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/register_file.v
+  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/control_unit.v
+  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/imm_gen.v
+  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/alu.v
+  C:/Users/Evan/Documents/SYSC_4310_ARM_Verilog/arm-lab3.srcs/sources_1/new/data_memory.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -107,7 +110,7 @@ read_checkpoint -auto_incremental -incremental C:/Users/Evan/Documents/SYSC_4310
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ArmProcessor -part xc7k70tfbv676-1
+synth_design -top ArmProcessor -part xa7s75fgga676-2I
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

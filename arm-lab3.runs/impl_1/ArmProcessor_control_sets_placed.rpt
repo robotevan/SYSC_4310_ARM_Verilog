@@ -1,0 +1,182 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Fri Dec  9 16:21:43 2022
+| Host         : DESKTOP-2EM2JA4 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file ArmProcessor_control_sets_placed.rpt
+| Design       : ArmProcessor
+| Device       : xa7s75
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   104 |
+|    Minimum number of control sets                        |   104 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    26 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   104 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   100 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              81 |           38 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              32 |            8 |
+| Yes          | No                    | No                     |             503 |          160 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            2654 |         1126 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------------+----------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|              Clock Signal              |              Enable Signal             |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------------+----------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|  control/read_data_reg[13]             |                                        |                                     |                1 |              1 |         1.00 |
+|  instruction_mem/read_data_reg[6]_1    |                                        |                                     |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG                         |                                        |                                     |                2 |              2 |         1.00 |
+|  instruction_mem/read_data_reg[6]_0[0] |                                        |                                     |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG                         | program_counter/rst                    | program_counter/mem[28][30]_i_2_0   |                5 |             31 |         6.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_0                  | program_counter/mem[25][27]_i_2_0   |                7 |             31 |         4.43 |
+|  clk_IBUF_BUFG                         | program_counter/rst_13                 | program_counter/pc_reg[0]_73        |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                         | program_counter/program_mode           | instruction_mem/mem[31][31]_i_1_n_2 |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_10                 |                                     |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_12                 |                                     |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_14                 | program_counter/pc_reg[28]_33       |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_1                  | instruction_mem/mem[60][31]_i_1_n_2 |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_5                  | program_counter/pc_reg[3]_1         |               31 |             32 |         1.03 |
+|  clk_IBUF_BUFG                         | program_counter/rst_21                 | program_counter/pc_reg[30]_36       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_58                 | program_counter/pc_reg[30]_38       |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_59                 |                                     |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_53                 | program_counter/pc_reg[16]_0        |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_19                 | program_counter/pc_reg[4]_4         |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_43                 |                                     |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_25                 | program_counter/program_mode_0      |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_26                 | program_counter/program_mode_1      |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | program_counter/rst_17                 | program_counter/pc_reg[30]_35       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_3                  | program_counter/pc_reg[23]_0        |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG                         | program_counter/rst_34                 | program_counter/program_mode_6      |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_29                 | program_counter/program_mode_4      |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG                         | program_counter/rst_36                 | program_counter/pc_reg[4]_0         |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_38                 | program_counter/pc_reg[27]_96       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_33                 | instruction_mem/mem[44][31]_i_1_n_2 |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_18                 | program_counter/pc_reg[28]_35       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_20                 | program_counter/pc_reg[4]_3         |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_32                 | instruction_mem/mem[32][31]_i_1_n_2 |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_39                 | program_counter/pc_reg[4]_2         |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_4                  | program_counter/pc_reg[4]_6         |               22 |             32 |         1.45 |
+|  clk_IBUF_BUFG                         | program_counter/rst_40                 | program_counter/pc_reg[19]_1        |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG                         | program_counter/rst_41                 |                                     |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_42                 |                                     |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_37                 | program_counter/program_mode_8      |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_15                 | program_counter/pc_reg[30]_34       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_44                 | program_counter/rst_57              |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_23                 | program_counter/pc_reg[30]_37       |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_45                 |                                     |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG                         | program_counter/rst_47                 | program_counter/pc_reg[19]_0        |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG                         | program_counter/rst_22                 | program_counter/pc_reg[30]_41       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_27                 | program_counter/program_mode_2      |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_30                 | program_counter/program_mode_5      |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_24                 |                                     |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_46                 |                                     |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_2                  | program_counter/pc_reg[30]_39       |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_48                 | program_counter/program_mode_9      |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_49                 | program_counter/pc_reg[27]_95       |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_50                 | program_counter/pc_reg[4]_1         |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_51                 | program_counter/pc_reg[4]_5         |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_31                 |                                     |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG                         | program_counter/rst_52                 | program_counter/pc_reg[5]_3         |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/rst_16                 | program_counter/pc_reg[28]_34       |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | program_counter/rst_54                 | program_counter/pc_reg[28]_0        |                5 |             32 |         6.40 |
+|  clk_IBUF_BUFG                         | program_counter/rst_28                 | program_counter/program_mode_3      |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_35                 | program_counter/program_mode_7      |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_9                  | program_counter/pc_reg[30]_40       |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | program_counter/rst_8                  |                                     |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG                         | program_counter/rst_60                 | program_counter/rst_55              |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG                         | program_counter/rst_7                  |                                     |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG                         | program_counter/rst_6                  | program_counter/pc_reg[30]_32       |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | program_counter/rst_61                 |                                     |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/rst_62                 | program_counter/rst_56              |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | program_counter/pc_reg[5]_1            | program_counter/pc_reg[28]_36       |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG                         | program_counter/pc_reg[5]_2            | program_counter/pc_reg[19]_2        |               22 |             32 |         1.45 |
+|  clk_IBUF_BUFG                         | instruction_mem/E[0]                   | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_6[0] | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_1[0] | rst_IBUF                            |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[11]_0[0] | rst_IBUF                            |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_4[0]  | rst_IBUF                            |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_0[0]  | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_1[0]  | rst_IBUF                            |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_4[0]  | rst_IBUF                            |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_4[0] | rst_IBUF                            |               26 |             32 |         1.23 |
+|  clk_IBUF_BUFG                         | program_counter/rst_11                 | program_counter/pc_reg[30]_33       |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_2[0]  | rst_IBUF                            |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_5[0]  | rst_IBUF                            |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_0[0]  | rst_IBUF                            |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_2[0]  | rst_IBUF                            |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_3[0]  | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[11]_1[0] | rst_IBUF                            |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_1[0]  | rst_IBUF                            |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_2[0]  | rst_IBUF                            |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_5[0] | rst_IBUF                            |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_5[0]  | rst_IBUF                            |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_2[0] | rst_IBUF                            |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_7[0] | rst_IBUF                            |               26 |             32 |         1.23 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_0[0]  | rst_IBUF                            |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[8]_6[0]  | rst_IBUF                            |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_0[0] | rst_IBUF                            |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[10]_3[0] | rst_IBUF                            |               24 |             32 |         1.33 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_1[0]  | rst_IBUF                            |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_3[0]  | rst_IBUF                            |               24 |             32 |         1.33 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_4[0]  | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_3[0]  | rst_IBUF                            |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_5[0]  | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[9]_6[0]  | rst_IBUF                            |               15 |             32 |         2.13 |
+|  instruction_read_src_BUFG             |                                        | rst_IBUF                            |                8 |             32 |         4.00 |
+|  n_0_2104_BUFG                         |                                        |                                     |                9 |             32 |         3.56 |
+|  n_1_3146_BUFG                         |                                        |                                     |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG                         | instruction_mem/read_data_reg[7]_6[0]  | rst_IBUF                            |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG                         | instruction_read_src_BUFG              |                                     |               34 |             87 |         2.56 |
++----------------------------------------+----------------------------------------+-------------------------------------+------------------+----------------+--------------+
+
+

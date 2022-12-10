@@ -28,14 +28,18 @@ module Pc(
     output [31:0] addr_out  // output address  of pc
     );
     
-    reg pc; // hold value of pc
+    reg [31:0]pc = 32'b0; // hold value of pc
+    
+    assign addr_out = pc;
     
     always @(posedge clk)begin
         if (rst)
             pc <= 32'b0; // clear address
-        else if (pc_write)
-            pc <= addr_in; // load adderss / branch
-        else
-            pc <= pc + 4; // increment
-    end
+        else begin
+            pc <= pc +1;
+            if (pc_write)
+                pc <= addr_in;
+        end
+    end    
+
 endmodule

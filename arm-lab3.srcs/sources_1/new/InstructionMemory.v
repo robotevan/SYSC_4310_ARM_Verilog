@@ -32,6 +32,8 @@ module InstructionMemory(
     
     // 32 bit words (4 byte)
     reg [`INSTRUCTION_SIZE-1 : 0]instruction_mem[`INSTRUCTION_MEM_SIZE-1 : 0];
+    
+    //
    
     always @(posedge clk) begin
         if (rst)
